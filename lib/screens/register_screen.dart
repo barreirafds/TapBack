@@ -56,21 +56,12 @@ class _RegisterScreenState extends State<RegisterScreen> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                const SizedBox(height: 25),
-
                 const Text(
                   'Create your account.',
                   style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
                 ),
 
-                const SizedBox(height: 10),
-
-                const Text(
-                  'Get started with TapBack.',
-                  style: TextStyle(color: AppColors.textSecondary),
-                ),
-
-                const SizedBox(height: 35),
+                const SizedBox(height: 25),
 
                 const Text('Full name'),
                 const SizedBox(height: 10),

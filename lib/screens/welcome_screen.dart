@@ -78,27 +78,6 @@ class WelcomeScreen extends StatelessWidget {
 
               const Spacer(),
 
-              const Text(
-                'More festival.\nLess friction.',
-                style: TextStyle(
-                  fontSize: 36,
-                  fontWeight: FontWeight.bold,
-                  height: 1.1,
-                ),
-              ),
-
-              const SizedBox(height: 14),
-
-              const Text(
-                'Pay with your bracelet. Return your cups. '
-                'Get your deposit back in just a few taps.',
-                style: TextStyle(
-                  color: AppColors.textSecondary,
-                  fontSize: 15,
-                  height: 1.5,
-                ),
-              ),
-
               const SizedBox(height: 32),
 
               PrimaryButton(
