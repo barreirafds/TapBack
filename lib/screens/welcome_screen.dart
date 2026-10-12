@@ -1,0 +1,144 @@
+import 'package:flutter/material.dart';
+
+import '../theme/app_colors.dart';
+import '../widgets/primary_button.dart';
+import 'login_screen.dart';
+import 'register_screen.dart';
+
+class WelcomeScreen extends StatelessWidget {
+  const WelcomeScreen({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: SafeArea(
+        child: Padding(
+          padding: const EdgeInsets.all(24),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Row(
+                children: [
+                  Container(
+                    padding: const EdgeInsets.all(8),
+                    decoration: BoxDecoration(
+                      color: AppColors.primary,
+                      borderRadius: BorderRadius.circular(10),
+                    ),
+                    child: const Icon(Icons.nfc, color: Colors.white),
+                  ),
+                  const SizedBox(width: 10),
+                  const Text(
+                    'TapBack',
+                    style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                  ),
+                ],
+              ),
+
+              const Spacer(),
+
+              Center(
+                child: Container(
+                  height: 140,
+                  width: 140,
+                  decoration: BoxDecoration(
+                    shape: BoxShape.circle,
+                    border: Border.all(color: AppColors.border),
+                  ),
+                  child: Center(
+                    child: Container(
+                      height: 95,
+                      width: 65,
+                      decoration: BoxDecoration(
+                        color: AppColors.surface,
+                        borderRadius: BorderRadius.circular(30),
+                      ),
+                      child: const Icon(
+                        Icons.nfc,
+                        color: AppColors.primaryLight,
+                        size: 45,
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+
+              const SizedBox(height: 28),
+
+              const Center(
+                child: Text(
+                  'ONE BRACELET. LESS WASTE.',
+                  style: TextStyle(
+                    fontSize: 11,
+                    letterSpacing: 2,
+                    color: AppColors.textSecondary,
+                  ),
+                ),
+              ),
+
+              const Spacer(),
+
+              const Text(
+                'More festival.\nLess friction.',
+                style: TextStyle(
+                  fontSize: 36,
+                  fontWeight: FontWeight.bold,
+                  height: 1.1,
+                ),
+              ),
+
+              const SizedBox(height: 14),
+
+              const Text(
+                'Pay with your bracelet. Return your cups. '
+                'Get your deposit back in just a few taps.',
+                style: TextStyle(
+                  color: AppColors.textSecondary,
+                  fontSize: 15,
+                  height: 1.5,
+                ),
+              ),
+
+              const SizedBox(height: 32),
+
+              PrimaryButton(
+                text: 'Login',
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (_) => const LoginScreen()),
+                  );
+                },
+              ),
+
+              const SizedBox(height: 12),
+
+              SizedBox(
+                width: double.infinity,
+                height: 54,
+                child: OutlinedButton(
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (_) => const RegisterScreen()),
+                    );
+                  },
+                  style: OutlinedButton.styleFrom(
+                    foregroundColor: Colors.white,
+                    side: const BorderSide(color: AppColors.border),
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(12),
+                    ),
+                  ),
+                  child: const Text('Create account'),
+                ),
+              ),
+
+              const SizedBox(height: 28),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+}
