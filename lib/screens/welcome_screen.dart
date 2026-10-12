@@ -11,29 +11,6 @@ class WelcomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: SafeArea(
-        child: Padding(
-          padding: const EdgeInsets.all(24),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Row(
-                children: [
-                  Container(
-                    padding: const EdgeInsets.all(8),
-                    decoration: BoxDecoration(
-                      color: AppColors.primary,
-                      borderRadius: BorderRadius.circular(10),
-                    ),
-                    child: const Icon(Icons.nfc, color: Colors.white),
-                  ),
-                  const SizedBox(width: 10),
-                  const Text(
-                    'TapBack',
-                    style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
-                  ),
-                ],
-              ),
 
               const Spacer(),
 
@@ -53,10 +30,11 @@ class WelcomeScreen extends StatelessWidget {
                         color: AppColors.surface,
                         borderRadius: BorderRadius.circular(30),
                       ),
-                      child: const Icon(
-                        Icons.nfc,
-                        color: AppColors.primaryLight,
-                        size: 45,
+                      child: Image.asset(
+                        'assets/images/tapback_logo.png',
+                        width: 65,
+                        height: 65,
+                        fit: BoxFit.contain,
                       ),
                     ),
                   ),
