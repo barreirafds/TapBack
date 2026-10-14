@@ -4,6 +4,8 @@ import '../theme/app_colors.dart';
 import '../widgets/primary_button.dart';
 import 'register_screen.dart';
 
+import '../widgets/main_navigation.dart';
+
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
 
@@ -32,10 +34,10 @@ class _LoginScreenState extends State<LoginScreen> {
     }
 
     // TODO: Connect to the backend authentication API.
-    ScaffoldMessenger.of(context).showSnackBar(
-      const SnackBar(
-        content: Text('Form valid. Backend login is not connected yet.'),
-      ),
+    Navigator.pushAndRemoveUntil(
+      context,
+      MaterialPageRoute(builder: (_) => const MainNavigation()),
+      (route) => false,
     );
   }
 
