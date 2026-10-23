@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import '../models/wallet_transaction.dart';
 import '../theme/app_colors.dart';
 import '../widgets/wallet_card.dart';
+import 'cup_return_screen.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -59,6 +60,32 @@ class HomeScreen extends StatelessWidget {
                 balance: 42.50,
                 braceletId: 'TB-8F2A',
                 isConnected: true,
+              ),
+
+              const SizedBox(height: 20),
+
+              SizedBox(
+                width: double.infinity,
+                height: 55,
+                child: ElevatedButton.icon(
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (_) => const CupReturnScreen(),
+                      ),
+                    );
+                  },
+                  icon: const Icon(Icons.recycling),
+                  label: const Text('Return Cups'),
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: AppColors.primary,
+                    foregroundColor: Colors.white,
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(12),
+                    ),
+                  ),
+                ),
               ),
 
               const SizedBox(height: 30),
